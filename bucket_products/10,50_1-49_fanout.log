@@ -1,0 +1,1769 @@
+main start at this time 1684041186.940941
+-----------------------------------------before load data 
+ Nvidia-smi: 0.166015625 GB
+    Memory Allocated: 0.0  GigaBytes
+Max Memory Allocated: 0.0  GigaBytes
+
+#nodes: 2449029
+#edges: 123718024
+#classes: 47
+success----------------------------------------
+196571
+39255
+2164782
+# Nodes: 2400608
+# Edges: 123718024
+# Train: 196571
+# Val: 39255
+# Test: 2164782
+# Classes: 47
+
+----------------------------------------start of run function 
+ Nvidia-smi: 0.166015625 GB
+    Memory Allocated: 0.0  GigaBytes
+Max Memory Allocated: 0.0  GigaBytes
+
+len(bkt)  173
+len(bkt)  221
+len(bkt)  374
+len(bkt)  456
+len(bkt)  445
+len(bkt)  550
+len(bkt)  655
+len(bkt)  512
+len(bkt)  576
+len(bkt)  640
+len(bkt)  624
+len(bkt)  583
+len(bkt)  615
+len(bkt)  695
+len(bkt)  673
+len(bkt)  614
+len(bkt)  556
+len(bkt)  604
+len(bkt)  584
+len(bkt)  572
+len(bkt)  586
+len(bkt)  592
+len(bkt)  648
+len(bkt)  645
+len(bkt)  671
+len(bkt)  659
+len(bkt)  646
+len(bkt)  768
+len(bkt)  643
+len(bkt)  689
+len(bkt)  691
+len(bkt)  727
+len(bkt)  793
+len(bkt)  677
+len(bkt)  754
+len(bkt)  741
+len(bkt)  791
+len(bkt)  775
+len(bkt)  816
+len(bkt)  852
+len(bkt)  861
+len(bkt)  813
+len(bkt)  933
+len(bkt)  806
+len(bkt)  884
+len(bkt)  807
+len(bkt)  927
+len(bkt)  958
+len(bkt)  879
+len(bkt)  163817
+---||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||--
+
+50
+50
+[0.0008800891281012967, 0.001124275706996454, 0.0019026204272247686, 0.0023197724995039962, 0.002263813075173856, 0.0027979712165070126, 0.00333212935784017, 0.0026046568415483465, 0.0029302389467418897, 0.003255821051935433, 0.003174425525637047, 0.0029658494894974335, 0.0031286405420942053, 0.003535618173586134, 0.0034236993249258537, 0.0031235533217005562, 0.0028284945388689074, 0.003072681117764065, 0.0029709367098910825, 0.002909890065167293, 0.0029811111506783806, 0.0030116344730402754, 0.003296518815084626, 0.0032812571539036785, 0.0034135248841385556, 0.003352478239414766, 0.0032863443742973276, 0.00390698526232252, 0.0032710827131163804, 0.00350509485122424, 0.003515269292011538, 0.003698409226182906, 0.004034165772163747, 0.0034440482065004503, 0.003835764176811432, 0.0037696303116939935, 0.004023991331376449, 0.003942595805078063, 0.0041511718412176775, 0.004334311775389045, 0.004380096758931887, 0.00413591018003673, 0.004746376627274624, 0.004100299637281186, 0.004497102827985816, 0.004105386857674835, 0.004715853304912729, 0.004873557137115851, 0.004471666726017572, 0.833373183226417]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ the number of batches:  50
+check_connections_block*********************************
+num of batch  50
+check_connections_block*********************************
+----------------------------------------after generate_dataloader_bucket_block 
+ Nvidia-smi: 1.34375 GB
+    Memory Allocated: 0.000934600830078125  GigaBytes
+Max Memory Allocated: 0.000934600830078125  GigaBytes
+
+batch 0
+src global  1374
+seeds global  173
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 1.34375 GB
+    Memory Allocated: 0.0014481544494628906  GigaBytes
+Max Memory Allocated: 0.0014481544494628906  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 1.431640625 GB
+    Memory Allocated: 0.0014605522155761719  GigaBytes
+Max Memory Allocated: 0.0014605522155761719  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 1.533203125 GB
+    Memory Allocated: 0.011289119720458984  GigaBytes
+Max Memory Allocated: 0.01148366928100586  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 1.533203125 GB
+    Memory Allocated: 0.01132059097290039  GigaBytes
+Max Memory Allocated: 0.01148366928100586  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 1.541015625 GB
+    Memory Allocated: 0.0024442672729492188  GigaBytes
+Max Memory Allocated: 0.01148843765258789  GigaBytes
+
+---------------------------------------- batch 0
+ Nvidia-smi: 1.541015625 GB
+    Memory Allocated: 0.0024442672729492188  GigaBytes
+Max Memory Allocated: 0.01148843765258789  GigaBytes
+
+batch 1
+src global  3197
+seeds global  221
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 1.560546875 GB
+    Memory Allocated: 0.003101825714111328  GigaBytes
+Max Memory Allocated: 0.01148843765258789  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 1.560546875 GB
+    Memory Allocated: 0.003131389617919922  GigaBytes
+Max Memory Allocated: 0.01148843765258789  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 1.57421875 GB
+    Memory Allocated: 0.027266979217529297  GigaBytes
+Max Memory Allocated: 0.02765035629272461  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 1.57421875 GB
+    Memory Allocated: 0.027306556701660156  GigaBytes
+Max Memory Allocated: 0.02765035629272461  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 1.57421875 GB
+    Memory Allocated: 0.0031790733337402344  GigaBytes
+Max Memory Allocated: 0.02765035629272461  GigaBytes
+
+---------------------------------------- batch 1
+ Nvidia-smi: 1.57421875 GB
+    Memory Allocated: 0.0031790733337402344  GigaBytes
+Max Memory Allocated: 0.02765035629272461  GigaBytes
+
+batch 2
+src global  6538
+seeds global  374
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 1.57421875 GB
+    Memory Allocated: 0.004370689392089844  GigaBytes
+Max Memory Allocated: 0.02765035629272461  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 1.57421875 GB
+    Memory Allocated: 0.0044345855712890625  GigaBytes
+Max Memory Allocated: 0.02765035629272461  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 1.60546875 GB
+    Memory Allocated: 0.0576634407043457  GigaBytes
+Max Memory Allocated: 0.058650970458984375  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 1.60546875 GB
+    Memory Allocated: 0.05772972106933594  GigaBytes
+Max Memory Allocated: 0.058650970458984375  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 1.60546875 GB
+    Memory Allocated: 0.004543781280517578  GigaBytes
+Max Memory Allocated: 0.058650970458984375  GigaBytes
+
+---------------------------------------- batch 2
+ Nvidia-smi: 1.60546875 GB
+    Memory Allocated: 0.004543781280517578  GigaBytes
+Max Memory Allocated: 0.058650970458984375  GigaBytes
+
+batch 3
+src global  10417
+seeds global  456
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 1.60546875 GB
+    Memory Allocated: 0.005875110626220703  GigaBytes
+Max Memory Allocated: 0.058650970458984375  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 1.60546875 GB
+    Memory Allocated: 0.005981922149658203  GigaBytes
+Max Memory Allocated: 0.058650970458984375  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 1.6640625 GB
+    Memory Allocated: 0.09413385391235352  GigaBytes
+Max Memory Allocated: 0.09579229354858398  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 1.6640625 GB
+    Memory Allocated: 0.09421443939208984  GigaBytes
+Max Memory Allocated: 0.09579229354858398  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 1.6640625 GB
+    Memory Allocated: 0.006131649017333984  GigaBytes
+Max Memory Allocated: 0.09579229354858398  GigaBytes
+
+---------------------------------------- batch 3
+ Nvidia-smi: 1.6640625 GB
+    Memory Allocated: 0.006131649017333984  GigaBytes
+Max Memory Allocated: 0.09579229354858398  GigaBytes
+
+batch 4
+src global  13678
+seeds global  445
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 1.6640625 GB
+    Memory Allocated: 0.0071544647216796875  GigaBytes
+Max Memory Allocated: 0.09579229354858398  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 1.6640625 GB
+    Memory Allocated: 0.007296562194824219  GigaBytes
+Max Memory Allocated: 0.09579229354858398  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 1.68359375 GB
+    Memory Allocated: 0.1237640380859375  GigaBytes
+Max Memory Allocated: 0.1258220672607422  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 1.68359375 GB
+    Memory Allocated: 0.12384271621704102  GigaBytes
+Max Memory Allocated: 0.1258220672607422  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 1.68359375 GB
+    Memory Allocated: 0.0074710845947265625  GigaBytes
+Max Memory Allocated: 0.1258220672607422  GigaBytes
+
+---------------------------------------- batch 4
+ Nvidia-smi: 1.68359375 GB
+    Memory Allocated: 0.0074710845947265625  GigaBytes
+Max Memory Allocated: 0.1258220672607422  GigaBytes
+
+batch 5
+src global  19253
+seeds global  550
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 1.68359375 GB
+    Memory Allocated: 0.00962686538696289  GigaBytes
+Max Memory Allocated: 0.1258220672607422  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 1.68359375 GB
+    Memory Allocated: 0.009830951690673828  GigaBytes
+Max Memory Allocated: 0.1258220672607422  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 1.72265625 GB
+    Memory Allocated: 0.17826366424560547  GigaBytes
+Max Memory Allocated: 0.1813359260559082  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 1.72265625 GB
+    Memory Allocated: 0.1783604621887207  GigaBytes
+Max Memory Allocated: 0.1813359260559082  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 1.72265625 GB
+    Memory Allocated: 0.010101318359375  GigaBytes
+Max Memory Allocated: 0.1813359260559082  GigaBytes
+
+---------------------------------------- batch 5
+ Nvidia-smi: 1.72265625 GB
+    Memory Allocated: 0.010101318359375  GigaBytes
+Max Memory Allocated: 0.1813359260559082  GigaBytes
+
+batch 6
+src global  24237
+seeds global  655
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 1.72265625 GB
+    Memory Allocated: 0.01125478744506836  GigaBytes
+Max Memory Allocated: 0.1813359260559082  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 1.72265625 GB
+    Memory Allocated: 0.011522769927978516  GigaBytes
+Max Memory Allocated: 0.1813359260559082  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 1.78125 GB
+    Memory Allocated: 0.23245668411254883  GigaBytes
+Max Memory Allocated: 0.23671483993530273  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 1.78125 GB
+    Memory Allocated: 0.23257207870483398  GigaBytes
+Max Memory Allocated: 0.23671483993530273  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 1.78125 GB
+    Memory Allocated: 0.011873245239257812  GigaBytes
+Max Memory Allocated: 0.23671483993530273  GigaBytes
+
+---------------------------------------- batch 6
+ Nvidia-smi: 1.78125 GB
+    Memory Allocated: 0.011873245239257812  GigaBytes
+Max Memory Allocated: 0.23671483993530273  GigaBytes
+
+batch 7
+src global  26556
+seeds global  512
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 1.78125 GB
+    Memory Allocated: 0.012254714965820312  GigaBytes
+Max Memory Allocated: 0.23671483993530273  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 1.78125 GB
+    Memory Allocated: 0.012540817260742188  GigaBytes
+Max Memory Allocated: 0.23671483993530273  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 1.802734375 GB
+    Memory Allocated: 0.25195932388305664  GigaBytes
+Max Memory Allocated: 0.25641393661499023  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 1.802734375 GB
+    Memory Allocated: 0.25204944610595703  GigaBytes
+Max Memory Allocated: 0.25641393661499023  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 1.8046875 GB
+    Memory Allocated: 0.012862205505371094  GigaBytes
+Max Memory Allocated: 0.25641393661499023  GigaBytes
+
+---------------------------------------- batch 7
+ Nvidia-smi: 1.8046875 GB
+    Memory Allocated: 0.012862205505371094  GigaBytes
+Max Memory Allocated: 0.25641393661499023  GigaBytes
+
+batch 8
+src global  31143
+seeds global  576
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 1.8046875 GB
+    Memory Allocated: 0.014163494110107422  GigaBytes
+Max Memory Allocated: 0.25641393661499023  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 1.8046875 GB
+    Memory Allocated: 0.014503002166748047  GigaBytes
+Max Memory Allocated: 0.25641393661499023  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 1.857421875 GB
+    Memory Allocated: 0.2925300598144531  GigaBytes
+Max Memory Allocated: 0.2973771095275879  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 1.857421875 GB
+    Memory Allocated: 0.2926316261291504  GigaBytes
+Max Memory Allocated: 0.2973771095275879  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 1.857421875 GB
+    Memory Allocated: 0.014926910400390625  GigaBytes
+Max Memory Allocated: 0.2973771095275879  GigaBytes
+
+---------------------------------------- batch 8
+ Nvidia-smi: 1.857421875 GB
+    Memory Allocated: 0.014926910400390625  GigaBytes
+Max Memory Allocated: 0.2973771095275879  GigaBytes
+
+batch 9
+src global  37322
+seeds global  640
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 1.857421875 GB
+    Memory Allocated: 0.016495704650878906  GigaBytes
+Max Memory Allocated: 0.2973771095275879  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 1.857421875 GB
+    Memory Allocated: 0.016912460327148438  GigaBytes
+Max Memory Allocated: 0.2973771095275879  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 1.97265625 GB
+    Memory Allocated: 0.360745906829834  GigaBytes
+Max Memory Allocated: 0.36733484268188477  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 1.97265625 GB
+    Memory Allocated: 0.3608584403991699  GigaBytes
+Max Memory Allocated: 0.36733484268188477  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 1.97265625 GB
+    Memory Allocated: 0.017429828643798828  GigaBytes
+Max Memory Allocated: 0.36733484268188477  GigaBytes
+
+---------------------------------------- batch 9
+ Nvidia-smi: 1.97265625 GB
+    Memory Allocated: 0.017429828643798828  GigaBytes
+Max Memory Allocated: 0.36733484268188477  GigaBytes
+
+batch 10
+src global  41297
+seeds global  624
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 1.97265625 GB
+    Memory Allocated: 0.01815319061279297  GigaBytes
+Max Memory Allocated: 0.36733484268188477  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 1.97265625 GB
+    Memory Allocated: 0.018619537353515625  GigaBytes
+Max Memory Allocated: 0.36733484268188477  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 2.037109375 GB
+    Memory Allocated: 0.4103269577026367  GigaBytes
+Max Memory Allocated: 0.4167823791503906  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 2.037109375 GB
+    Memory Allocated: 0.41043710708618164  GigaBytes
+Max Memory Allocated: 0.4167823791503906  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 2.037109375 GB
+    Memory Allocated: 0.019181251525878906  GigaBytes
+Max Memory Allocated: 0.4167823791503906  GigaBytes
+
+---------------------------------------- batch 10
+ Nvidia-smi: 2.037109375 GB
+    Memory Allocated: 0.019181251525878906  GigaBytes
+Max Memory Allocated: 0.4167823791503906  GigaBytes
+
+batch 11
+src global  41141
+seeds global  583
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 2.037109375 GB
+    Memory Allocated: 0.018271446228027344  GigaBytes
+Max Memory Allocated: 0.4167823791503906  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 2.037109375 GB
+    Memory Allocated: 0.018729209899902344  GigaBytes
+Max Memory Allocated: 0.4167823791503906  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 2.037109375 GB
+    Memory Allocated: 0.3959684371948242  GigaBytes
+Max Memory Allocated: 0.4167823791503906  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 2.037109375 GB
+    Memory Allocated: 0.3960714340209961  GigaBytes
+Max Memory Allocated: 0.4167823791503906  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 2.037109375 GB
+    Memory Allocated: 0.019277572631835938  GigaBytes
+Max Memory Allocated: 0.4167823791503906  GigaBytes
+
+---------------------------------------- batch 11
+ Nvidia-smi: 2.037109375 GB
+    Memory Allocated: 0.019277572631835938  GigaBytes
+Max Memory Allocated: 0.4167823791503906  GigaBytes
+
+batch 12
+src global  49141
+seeds global  615
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 2.037109375 GB
+    Memory Allocated: 0.021425724029541016  GigaBytes
+Max Memory Allocated: 0.4167823791503906  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 2.037109375 GB
+    Memory Allocated: 0.021975994110107422  GigaBytes
+Max Memory Allocated: 0.4167823791503906  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 2.109375 GB
+    Memory Allocated: 0.4824380874633789  GigaBytes
+Max Memory Allocated: 0.48996639251708984  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 2.109375 GB
+    Memory Allocated: 0.482546329498291  GigaBytes
+Max Memory Allocated: 0.48996639251708984  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 2.109375 GB
+    Memory Allocated: 0.022644519805908203  GigaBytes
+Max Memory Allocated: 0.48996639251708984  GigaBytes
+
+---------------------------------------- batch 12
+ Nvidia-smi: 2.109375 GB
+    Memory Allocated: 0.022644519805908203  GigaBytes
+Max Memory Allocated: 0.48996639251708984  GigaBytes
+
+batch 13
+src global  53472
+seeds global  695
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 2.109375 GB
+    Memory Allocated: 0.023252487182617188  GigaBytes
+Max Memory Allocated: 0.48996639251708984  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 2.109375 GB
+    Memory Allocated: 0.023868560791015625  GigaBytes
+Max Memory Allocated: 0.48996639251708984  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 2.203125 GB
+    Memory Allocated: 0.5273432731628418  GigaBytes
+Max Memory Allocated: 0.537442684173584  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 2.203125 GB
+    Memory Allocated: 0.5274658203125  GigaBytes
+Max Memory Allocated: 0.537442684173584  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 2.203125 GB
+    Memory Allocated: 0.024631500244140625  GigaBytes
+Max Memory Allocated: 0.537442684173584  GigaBytes
+
+---------------------------------------- batch 13
+ Nvidia-smi: 2.203125 GB
+    Memory Allocated: 0.024631500244140625  GigaBytes
+Max Memory Allocated: 0.537442684173584  GigaBytes
+
+batch 14
+src global  56700
+seeds global  673
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 2.203125 GB
+    Memory Allocated: 0.02508258819580078  GigaBytes
+Max Memory Allocated: 0.537442684173584  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 2.203125 GB
+    Memory Allocated: 0.025722503662109375  GigaBytes
+Max Memory Allocated: 0.537442684173584  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 2.232421875 GB
+    Memory Allocated: 0.55072021484375  GigaBytes
+Max Memory Allocated: 0.5604953765869141  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 2.232421875 GB
+    Memory Allocated: 0.5508389472961426  GigaBytes
+Max Memory Allocated: 0.5604953765869141  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 2.232421875 GB
+    Memory Allocated: 0.026494979858398438  GigaBytes
+Max Memory Allocated: 0.5604953765869141  GigaBytes
+
+---------------------------------------- batch 14
+ Nvidia-smi: 2.232421875 GB
+    Memory Allocated: 0.026494979858398438  GigaBytes
+Max Memory Allocated: 0.5604953765869141  GigaBytes
+
+batch 15
+src global  57481
+seeds global  614
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 2.232421875 GB
+    Memory Allocated: 0.025336265563964844  GigaBytes
+Max Memory Allocated: 0.5604953765869141  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 2.232421875 GB
+    Memory Allocated: 0.025991439819335938  GigaBytes
+Max Memory Allocated: 0.5604953765869141  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 2.291015625 GB
+    Memory Allocated: 0.5623555183410645  GigaBytes
+Max Memory Allocated: 0.5716438293457031  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 2.291015625 GB
+    Memory Allocated: 0.5624637603759766  GigaBytes
+Max Memory Allocated: 0.5716438293457031  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 2.291015625 GB
+    Memory Allocated: 0.026772022247314453  GigaBytes
+Max Memory Allocated: 0.5716438293457031  GigaBytes
+
+---------------------------------------- batch 15
+ Nvidia-smi: 2.291015625 GB
+    Memory Allocated: 0.026772022247314453  GigaBytes
+Max Memory Allocated: 0.5716438293457031  GigaBytes
+
+batch 16
+src global  60493
+seeds global  556
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 2.291015625 GB
+    Memory Allocated: 0.027531147003173828  GigaBytes
+Max Memory Allocated: 0.5716438293457031  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 2.291015625 GB
+    Memory Allocated: 0.02821207046508789  GigaBytes
+Max Memory Allocated: 0.5716438293457031  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 2.322265625 GB
+    Memory Allocated: 0.5886473655700684  GigaBytes
+Max Memory Allocated: 0.5978078842163086  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 2.322265625 GB
+    Memory Allocated: 0.5887455940246582  GigaBytes
+Max Memory Allocated: 0.5978078842163086  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 2.322265625 GB
+    Memory Allocated: 0.029018878936767578  GigaBytes
+Max Memory Allocated: 0.5978078842163086  GigaBytes
+
+---------------------------------------- batch 16
+ Nvidia-smi: 2.322265625 GB
+    Memory Allocated: 0.029018878936767578  GigaBytes
+Max Memory Allocated: 0.5978078842163086  GigaBytes
+
+batch 17
+src global  63052
+seeds global  604
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 2.322265625 GB
+    Memory Allocated: 0.027818679809570312  GigaBytes
+Max Memory Allocated: 0.5978078842163086  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 2.322265625 GB
+    Memory Allocated: 0.02854156494140625  GigaBytes
+Max Memory Allocated: 0.5978078842163086  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 2.38671875 GB
+    Memory Allocated: 0.6198372840881348  GigaBytes
+Max Memory Allocated: 0.6301083564758301  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 2.38671875 GB
+    Memory Allocated: 0.6199436187744141  GigaBytes
+Max Memory Allocated: 0.6301083564758301  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 2.38671875 GB
+    Memory Allocated: 0.02942180633544922  GigaBytes
+Max Memory Allocated: 0.6301083564758301  GigaBytes
+
+---------------------------------------- batch 17
+ Nvidia-smi: 2.38671875 GB
+    Memory Allocated: 0.02942180633544922  GigaBytes
+Max Memory Allocated: 0.6301083564758301  GigaBytes
+
+batch 18
+src global  67306
+seeds global  584
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 2.38671875 GB
+    Memory Allocated: 0.029689788818359375  GigaBytes
+Max Memory Allocated: 0.6301083564758301  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 2.38671875 GB
+    Memory Allocated: 0.030466079711914062  GigaBytes
+Max Memory Allocated: 0.6301083564758301  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 2.455078125 GB
+    Memory Allocated: 0.6738200187683105  GigaBytes
+Max Memory Allocated: 0.6843194961547852  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 2.455078125 GB
+    Memory Allocated: 0.6739230155944824  GigaBytes
+Max Memory Allocated: 0.6843194961547852  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 2.455078125 GB
+    Memory Allocated: 0.031395912170410156  GigaBytes
+Max Memory Allocated: 0.6843194961547852  GigaBytes
+
+---------------------------------------- batch 18
+ Nvidia-smi: 2.455078125 GB
+    Memory Allocated: 0.031395912170410156  GigaBytes
+Max Memory Allocated: 0.6843194961547852  GigaBytes
+
+batch 19
+src global  66028
+seeds global  572
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 2.455078125 GB
+    Memory Allocated: 0.03029012680053711  GigaBytes
+Max Memory Allocated: 0.6843194961547852  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 2.455078125 GB
+    Memory Allocated: 0.03105020523071289  GigaBytes
+Max Memory Allocated: 0.6843194961547852  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 2.455078125 GB
+    Memory Allocated: 0.6543068885803223  GigaBytes
+Max Memory Allocated: 0.6843194961547852  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 2.455078125 GB
+    Memory Allocated: 0.6544079780578613  GigaBytes
+Max Memory Allocated: 0.6843194961547852  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 2.455078125 GB
+    Memory Allocated: 0.031966209411621094  GigaBytes
+Max Memory Allocated: 0.6843194961547852  GigaBytes
+
+---------------------------------------- batch 19
+ Nvidia-smi: 2.455078125 GB
+    Memory Allocated: 0.031966209411621094  GigaBytes
+Max Memory Allocated: 0.6843194961547852  GigaBytes
+
+batch 20
+src global  73077
+seeds global  586
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 2.455078125 GB
+    Memory Allocated: 0.03253650665283203  GigaBytes
+Max Memory Allocated: 0.6843194961547852  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 2.455078125 GB
+    Memory Allocated: 0.033385276794433594  GigaBytes
+Max Memory Allocated: 0.6843194961547852  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 2.568359375 GB
+    Memory Allocated: 0.7271652221679688  GigaBytes
+Max Memory Allocated: 0.7388124465942383  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 2.568359375 GB
+    Memory Allocated: 0.7272686958312988  GigaBytes
+Max Memory Allocated: 0.7388124465942383  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 2.568359375 GB
+    Memory Allocated: 0.034409523010253906  GigaBytes
+Max Memory Allocated: 0.7388124465942383  GigaBytes
+
+---------------------------------------- batch 20
+ Nvidia-smi: 2.568359375 GB
+    Memory Allocated: 0.034409523010253906  GigaBytes
+Max Memory Allocated: 0.7388124465942383  GigaBytes
+
+batch 21
+src global  80630
+seeds global  592
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 2.568359375 GB
+    Memory Allocated: 0.03555154800415039  GigaBytes
+Max Memory Allocated: 0.7388124465942383  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 2.568359375 GB
+    Memory Allocated: 0.0364842414855957  GigaBytes
+Max Memory Allocated: 0.7388124465942383  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 2.693359375 GB
+    Memory Allocated: 0.7938299179077148  GigaBytes
+Max Memory Allocated: 0.8061623573303223  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 2.693359375 GB
+    Memory Allocated: 0.7939343452453613  GigaBytes
+Max Memory Allocated: 0.8061623573303223  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 2.693359375 GB
+    Memory Allocated: 0.03760337829589844  GigaBytes
+Max Memory Allocated: 0.8061623573303223  GigaBytes
+
+---------------------------------------- batch 21
+ Nvidia-smi: 2.693359375 GB
+    Memory Allocated: 0.03760337829589844  GigaBytes
+Max Memory Allocated: 0.8061623573303223  GigaBytes
+
+batch 22
+src global  86419
+seeds global  648
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 2.693359375 GB
+    Memory Allocated: 0.03804636001586914  GigaBytes
+Max Memory Allocated: 0.8061623573303223  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 2.693359375 GB
+    Memory Allocated: 0.03905344009399414  GigaBytes
+Max Memory Allocated: 0.8061623573303223  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 2.828125 GB
+    Memory Allocated: 0.8753395080566406  GigaBytes
+Max Memory Allocated: 0.8894491195678711  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 2.828125 GB
+    Memory Allocated: 0.8754534721374512  GigaBytes
+Max Memory Allocated: 0.8894491195678711  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 2.828125 GB
+    Memory Allocated: 0.04027605056762695  GigaBytes
+Max Memory Allocated: 0.8894491195678711  GigaBytes
+
+---------------------------------------- batch 22
+ Nvidia-smi: 2.828125 GB
+    Memory Allocated: 0.04027605056762695  GigaBytes
+Max Memory Allocated: 0.8894491195678711  GigaBytes
+
+batch 23
+src global  88004
+seeds global  645
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 2.828125 GB
+    Memory Allocated: 0.03944873809814453  GigaBytes
+Max Memory Allocated: 0.8894491195678711  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 2.828125 GB
+    Memory Allocated: 0.04047393798828125  GigaBytes
+Max Memory Allocated: 0.8894491195678711  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 2.875 GB
+    Memory Allocated: 0.886444091796875  GigaBytes
+Max Memory Allocated: 0.9011135101318359  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 2.875 GB
+    Memory Allocated: 0.8865575790405273  GigaBytes
+Max Memory Allocated: 0.9011135101318359  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 2.875 GB
+    Memory Allocated: 0.04171037673950195  GigaBytes
+Max Memory Allocated: 0.9011135101318359  GigaBytes
+
+---------------------------------------- batch 23
+ Nvidia-smi: 2.875 GB
+    Memory Allocated: 0.04171037673950195  GigaBytes
+Max Memory Allocated: 0.9011135101318359  GigaBytes
+
+batch 24
+src global  94871
+seeds global  671
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 2.875 GB
+    Memory Allocated: 0.04198312759399414  GigaBytes
+Max Memory Allocated: 0.9011135101318359  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 2.875 GB
+    Memory Allocated: 0.043103694915771484  GigaBytes
+Max Memory Allocated: 0.9011135101318359  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 3.0234375 GB
+    Memory Allocated: 0.9607186317443848  GigaBytes
+Max Memory Allocated: 0.9766130447387695  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 3.0234375 GB
+    Memory Allocated: 0.9608368873596191  GigaBytes
+Max Memory Allocated: 0.9766130447387695  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 3.0234375 GB
+    Memory Allocated: 0.04445981979370117  GigaBytes
+Max Memory Allocated: 0.9766130447387695  GigaBytes
+
+---------------------------------------- batch 24
+ Nvidia-smi: 3.0234375 GB
+    Memory Allocated: 0.04445981979370117  GigaBytes
+Max Memory Allocated: 0.9766130447387695  GigaBytes
+
+batch 25
+src global  100958
+seeds global  659
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 3.0234375 GB
+    Memory Allocated: 0.04468727111816406  GigaBytes
+Max Memory Allocated: 0.9766130447387695  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 3.0234375 GB
+    Memory Allocated: 0.045886993408203125  GigaBytes
+Max Memory Allocated: 0.9766130447387695  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 3.18359375 GB
+    Memory Allocated: 1.0299701690673828  GigaBytes
+Max Memory Allocated: 1.0462164878845215  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 3.18359375 GB
+    Memory Allocated: 1.0300860404968262  GigaBytes
+Max Memory Allocated: 1.0462164878845215  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 3.18359375 GB
+    Memory Allocated: 0.04732465744018555  GigaBytes
+Max Memory Allocated: 1.0462164878845215  GigaBytes
+
+---------------------------------------- batch 25
+ Nvidia-smi: 3.18359375 GB
+    Memory Allocated: 0.04732465744018555  GigaBytes
+Max Memory Allocated: 1.0462164878845215  GigaBytes
+
+batch 26
+src global  98642
+seeds global  646
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 3.18359375 GB
+    Memory Allocated: 0.044625282287597656  GigaBytes
+Max Memory Allocated: 1.0462164878845215  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 3.18359375 GB
+    Memory Allocated: 0.045790672302246094  GigaBytes
+Max Memory Allocated: 1.0462164878845215  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 3.18359375 GB
+    Memory Allocated: 0.9954671859741211  GigaBytes
+Max Memory Allocated: 1.0462164878845215  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 3.18359375 GB
+    Memory Allocated: 0.9955811500549316  GigaBytes
+Max Memory Allocated: 1.0462164878845215  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 3.18359375 GB
+    Memory Allocated: 0.04719352722167969  GigaBytes
+Max Memory Allocated: 1.0462164878845215  GigaBytes
+
+---------------------------------------- batch 26
+ Nvidia-smi: 3.18359375 GB
+    Memory Allocated: 0.04719352722167969  GigaBytes
+Max Memory Allocated: 1.0462164878845215  GigaBytes
+
+batch 27
+src global  111017
+seeds global  768
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 3.18359375 GB
+    Memory Allocated: 0.04931974411010742  GigaBytes
+Max Memory Allocated: 1.0462164878845215  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 3.18359375 GB
+    Memory Allocated: 0.05067110061645508  GigaBytes
+Max Memory Allocated: 1.0462164878845215  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 3.361328125 GB
+    Memory Allocated: 1.152045726776123  GigaBytes
+Max Memory Allocated: 1.1724181175231934  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 3.361328125 GB
+    Memory Allocated: 1.1521806716918945  GigaBytes
+Max Memory Allocated: 1.1724181175231934  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 3.361328125 GB
+    Memory Allocated: 0.052329063415527344  GigaBytes
+Max Memory Allocated: 1.1724181175231934  GigaBytes
+
+---------------------------------------- batch 27
+ Nvidia-smi: 3.361328125 GB
+    Memory Allocated: 0.052329063415527344  GigaBytes
+Max Memory Allocated: 1.1724181175231934  GigaBytes
+
+batch 28
+src global  109076
+seeds global  643
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 3.361328125 GB
+    Memory Allocated: 0.04954338073730469  GigaBytes
+Max Memory Allocated: 1.1724181175231934  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 3.361328125 GB
+    Memory Allocated: 0.05086040496826172  GigaBytes
+Max Memory Allocated: 1.1724181175231934  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 3.361328125 GB
+    Memory Allocated: 1.1259679794311523  GigaBytes
+Max Memory Allocated: 1.1724181175231934  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 3.361328125 GB
+    Memory Allocated: 1.1260814666748047  GigaBytes
+Max Memory Allocated: 1.1724181175231934  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 3.361328125 GB
+    Memory Allocated: 0.05241823196411133  GigaBytes
+Max Memory Allocated: 1.1724181175231934  GigaBytes
+
+---------------------------------------- batch 28
+ Nvidia-smi: 3.361328125 GB
+    Memory Allocated: 0.05241823196411133  GigaBytes
+Max Memory Allocated: 1.1724181175231934  GigaBytes
+
+batch 29
+src global  112201
+seeds global  689
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 3.361328125 GB
+    Memory Allocated: 0.05078554153442383  GigaBytes
+Max Memory Allocated: 1.1724181175231934  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 3.361328125 GB
+    Memory Allocated: 0.0521540641784668  GigaBytes
+Max Memory Allocated: 1.1724181175231934  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 3.484375 GB
+    Memory Allocated: 1.166168212890625  GigaBytes
+Max Memory Allocated: 1.1857714653015137  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 3.484375 GB
+    Memory Allocated: 1.1662893295288086  GigaBytes
+Max Memory Allocated: 1.1857714653015137  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 3.484375 GB
+    Memory Allocated: 0.05381155014038086  GigaBytes
+Max Memory Allocated: 1.1857714653015137  GigaBytes
+
+---------------------------------------- batch 29
+ Nvidia-smi: 3.484375 GB
+    Memory Allocated: 0.05381155014038086  GigaBytes
+Max Memory Allocated: 1.1857714653015137  GigaBytes
+
+batch 30
+src global  116849
+seeds global  691
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 3.484375 GB
+    Memory Allocated: 0.05305290222167969  GigaBytes
+Max Memory Allocated: 1.1857714653015137  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 3.484375 GB
+    Memory Allocated: 0.054488182067871094  GigaBytes
+Max Memory Allocated: 1.1857714653015137  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 3.611328125 GB
+    Memory Allocated: 1.222581386566162  GigaBytes
+Max Memory Allocated: 1.2429075241088867  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 3.611328125 GB
+    Memory Allocated: 1.222702980041504  GigaBytes
+Max Memory Allocated: 1.2429075241088867  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 3.611328125 GB
+    Memory Allocated: 0.05621767044067383  GigaBytes
+Max Memory Allocated: 1.2429075241088867  GigaBytes
+
+---------------------------------------- batch 30
+ Nvidia-smi: 3.611328125 GB
+    Memory Allocated: 0.05621767044067383  GigaBytes
+Max Memory Allocated: 1.2429075241088867  GigaBytes
+
+batch 31
+src global  128368
+seeds global  727
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 3.611328125 GB
+    Memory Allocated: 0.05789375305175781  GigaBytes
+Max Memory Allocated: 1.2429075241088867  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 3.611328125 GB
+    Memory Allocated: 0.05946063995361328  GigaBytes
+Max Memory Allocated: 1.2429075241088867  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 3.822265625 GB
+    Memory Allocated: 1.3340959548950195  GigaBytes
+Max Memory Allocated: 1.3561687469482422  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 3.822265625 GB
+    Memory Allocated: 1.334223747253418  GigaBytes
+Max Memory Allocated: 1.3561687469482422  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 3.822265625 GB
+    Memory Allocated: 0.06135225296020508  GigaBytes
+Max Memory Allocated: 1.3561687469482422  GigaBytes
+
+---------------------------------------- batch 31
+ Nvidia-smi: 3.822265625 GB
+    Memory Allocated: 0.06135225296020508  GigaBytes
+Max Memory Allocated: 1.3561687469482422  GigaBytes
+
+batch 32
+src global  137921
+seeds global  793
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 3.822265625 GB
+    Memory Allocated: 0.062053680419921875  GigaBytes
+Max Memory Allocated: 1.3561687469482422  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 3.822265625 GB
+    Memory Allocated: 0.06378936767578125  GigaBytes
+Max Memory Allocated: 1.3561687469482422  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 4.056640625 GB
+    Memory Allocated: 1.4710359573364258  GigaBytes
+Max Memory Allocated: 1.495863914489746  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 4.056640625 GB
+    Memory Allocated: 1.4711756706237793  GigaBytes
+Max Memory Allocated: 1.495863914489746  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 4.056640625 GB
+    Memory Allocated: 0.06589317321777344  GigaBytes
+Max Memory Allocated: 1.495863914489746  GigaBytes
+
+---------------------------------------- batch 32
+ Nvidia-smi: 4.056640625 GB
+    Memory Allocated: 0.06589317321777344  GigaBytes
+Max Memory Allocated: 1.495863914489746  GigaBytes
+
+batch 33
+src global  125282
+seeds global  677
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 4.056640625 GB
+    Memory Allocated: 0.058228492736816406  GigaBytes
+Max Memory Allocated: 1.495863914489746  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 4.056640625 GB
+    Memory Allocated: 0.05979633331298828  GigaBytes
+Max Memory Allocated: 1.495863914489746  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 4.056640625 GB
+    Memory Allocated: 1.3364143371582031  GigaBytes
+Max Memory Allocated: 1.495863914489746  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 4.056640625 GB
+    Memory Allocated: 1.336533546447754  GigaBytes
+Max Memory Allocated: 1.495863914489746  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 4.056640625 GB
+    Memory Allocated: 0.0616612434387207  GigaBytes
+Max Memory Allocated: 1.495863914489746  GigaBytes
+
+---------------------------------------- batch 33
+ Nvidia-smi: 4.056640625 GB
+    Memory Allocated: 0.0616612434387207  GigaBytes
+Max Memory Allocated: 1.495863914489746  GigaBytes
+
+batch 34
+src global  140071
+seeds global  754
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 4.056640625 GB
+    Memory Allocated: 0.06465721130371094  GigaBytes
+Max Memory Allocated: 1.495863914489746  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 4.056640625 GB
+    Memory Allocated: 0.06639862060546875  GigaBytes
+Max Memory Allocated: 1.495863914489746  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 4.056640625 GB
+    Memory Allocated: 1.4808077812194824  GigaBytes
+Max Memory Allocated: 1.505849838256836  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 4.056640625 GB
+    Memory Allocated: 1.480940341949463  GigaBytes
+Max Memory Allocated: 1.505849838256836  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 4.056640625 GB
+    Memory Allocated: 0.0685110092163086  GigaBytes
+Max Memory Allocated: 1.505849838256836  GigaBytes
+
+---------------------------------------- batch 34
+ Nvidia-smi: 4.056640625 GB
+    Memory Allocated: 0.0685110092163086  GigaBytes
+Max Memory Allocated: 1.505849838256836  GigaBytes
+
+batch 35
+src global  147523
+seeds global  741
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 4.056640625 GB
+    Memory Allocated: 0.0675668716430664  GigaBytes
+Max Memory Allocated: 1.505849838256836  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 4.056640625 GB
+    Memory Allocated: 0.06940078735351562  GigaBytes
+Max Memory Allocated: 1.505849838256836  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 4.30078125 GB
+    Memory Allocated: 1.560880184173584  GigaBytes
+Max Memory Allocated: 1.586212158203125  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 4.30078125 GB
+    Memory Allocated: 1.5610108375549316  GigaBytes
+Max Memory Allocated: 1.586212158203125  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 4.30078125 GB
+    Memory Allocated: 0.07160091400146484  GigaBytes
+Max Memory Allocated: 1.586212158203125  GigaBytes
+
+---------------------------------------- batch 35
+ Nvidia-smi: 4.30078125 GB
+    Memory Allocated: 0.07160091400146484  GigaBytes
+Max Memory Allocated: 1.586212158203125  GigaBytes
+
+batch 36
+src global  152727
+seeds global  791
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 4.30078125 GB
+    Memory Allocated: 0.07018756866455078  GigaBytes
+Max Memory Allocated: 1.586212158203125  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 4.30078125 GB
+    Memory Allocated: 0.07216453552246094  GigaBytes
+Max Memory Allocated: 1.586212158203125  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 4.5703125 GB
+    Memory Allocated: 1.6763982772827148  GigaBytes
+Max Memory Allocated: 1.7041845321655273  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 4.5703125 GB
+    Memory Allocated: 1.6765375137329102  GigaBytes
+Max Memory Allocated: 1.7041845321655273  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 4.5703125 GB
+    Memory Allocated: 0.07455110549926758  GigaBytes
+Max Memory Allocated: 1.7041845321655273  GigaBytes
+
+---------------------------------------- batch 36
+ Nvidia-smi: 4.5703125 GB
+    Memory Allocated: 0.07455110549926758  GigaBytes
+Max Memory Allocated: 1.7041845321655273  GigaBytes
+
+batch 37
+src global  159249
+seeds global  775
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 4.5703125 GB
+    Memory Allocated: 0.07337427139282227  GigaBytes
+Max Memory Allocated: 1.7041845321655273  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 4.5703125 GB
+    Memory Allocated: 0.07540750503540039  GigaBytes
+Max Memory Allocated: 1.7041845321655273  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 4.751953125 GB
+    Memory Allocated: 1.721330165863037  GigaBytes
+Max Memory Allocated: 1.749305248260498  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 4.751953125 GB
+    Memory Allocated: 1.7214665412902832  GigaBytes
+Max Memory Allocated: 1.749305248260498  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 4.751953125 GB
+    Memory Allocated: 0.07784557342529297  GigaBytes
+Max Memory Allocated: 1.749305248260498  GigaBytes
+
+---------------------------------------- batch 37
+ Nvidia-smi: 4.751953125 GB
+    Memory Allocated: 0.07784557342529297  GigaBytes
+Max Memory Allocated: 1.749305248260498  GigaBytes
+
+batch 38
+src global  159614
+seeds global  816
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 4.751953125 GB
+    Memory Allocated: 0.0742635726928711  GigaBytes
+Max Memory Allocated: 1.749305248260498  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 4.751953125 GB
+    Memory Allocated: 0.07631874084472656  GigaBytes
+Max Memory Allocated: 1.749305248260498  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 4.751953125 GB
+    Memory Allocated: 1.7465343475341797  GigaBytes
+Max Memory Allocated: 1.7767562866210938  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 4.751953125 GB
+    Memory Allocated: 1.7466778755187988  GigaBytes
+Max Memory Allocated: 1.7767562866210938  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 4.751953125 GB
+    Memory Allocated: 0.07880687713623047  GigaBytes
+Max Memory Allocated: 1.7767562866210938  GigaBytes
+
+---------------------------------------- batch 38
+ Nvidia-smi: 4.751953125 GB
+    Memory Allocated: 0.07880687713623047  GigaBytes
+Max Memory Allocated: 1.7767562866210938  GigaBytes
+
+batch 39
+src global  167167
+seeds global  852
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 4.751953125 GB
+    Memory Allocated: 0.07811832427978516  GigaBytes
+Max Memory Allocated: 1.7767562866210938  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 4.751953125 GB
+    Memory Allocated: 0.08028507232666016  GigaBytes
+Max Memory Allocated: 1.7767562866210938  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 5.044921875 GB
+    Memory Allocated: 1.840177059173584  GigaBytes
+Max Memory Allocated: 1.8725461959838867  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 5.044921875 GB
+    Memory Allocated: 1.8403267860412598  GigaBytes
+Max Memory Allocated: 1.8725461959838867  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 5.044921875 GB
+    Memory Allocated: 0.08291053771972656  GigaBytes
+Max Memory Allocated: 1.8725461959838867  GigaBytes
+
+---------------------------------------- batch 39
+ Nvidia-smi: 5.044921875 GB
+    Memory Allocated: 0.08291053771972656  GigaBytes
+Max Memory Allocated: 1.8725461959838867  GigaBytes
+
+batch 40
+src global  182446
+seeds global  861
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 5.044921875 GB
+    Memory Allocated: 0.08484840393066406  GigaBytes
+Max Memory Allocated: 1.8725461959838867  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 5.044921875 GB
+    Memory Allocated: 0.0872344970703125  GigaBytes
+Max Memory Allocated: 1.8725461959838867  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 5.3671875 GB
+    Memory Allocated: 2.031388759613037  GigaBytes
+Max Memory Allocated: 2.064924716949463  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 5.3671875 GB
+    Memory Allocated: 2.0315403938293457  GigaBytes
+Max Memory Allocated: 2.064924716949463  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 5.3671875 GB
+    Memory Allocated: 0.09034061431884766  GigaBytes
+Max Memory Allocated: 2.064924716949463  GigaBytes
+
+---------------------------------------- batch 40
+ Nvidia-smi: 5.3671875 GB
+    Memory Allocated: 0.09034061431884766  GigaBytes
+Max Memory Allocated: 2.064924716949463  GigaBytes
+
+batch 41
+src global  170531
+seeds global  813
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 5.3671875 GB
+    Memory Allocated: 0.08184432983398438  GigaBytes
+Max Memory Allocated: 2.064924716949463  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 5.3671875 GB
+    Memory Allocated: 0.0840911865234375  GigaBytes
+Max Memory Allocated: 2.064924716949463  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 5.3671875 GB
+    Memory Allocated: 1.9086599349975586  GigaBytes
+Max Memory Allocated: 2.064924716949463  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 5.3671875 GB
+    Memory Allocated: 1.9088029861450195  GigaBytes
+Max Memory Allocated: 2.064924716949463  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 5.3671875 GB
+    Memory Allocated: 0.08678960800170898  GigaBytes
+Max Memory Allocated: 2.064924716949463  GigaBytes
+
+---------------------------------------- batch 41
+ Nvidia-smi: 5.3671875 GB
+    Memory Allocated: 0.08678960800170898  GigaBytes
+Max Memory Allocated: 2.064924716949463  GigaBytes
+
+batch 42
+src global  197299
+seeds global  933
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 5.3671875 GB
+    Memory Allocated: 0.0917515754699707  GigaBytes
+Max Memory Allocated: 2.064924716949463  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 5.3671875 GB
+    Memory Allocated: 0.09472322463989258  GigaBytes
+Max Memory Allocated: 2.064924716949463  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 5.71484375 GB
+    Memory Allocated: 2.2205753326416016  GigaBytes
+Max Memory Allocated: 2.2586770057678223  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 5.71484375 GB
+    Memory Allocated: 2.2207393646240234  GigaBytes
+Max Memory Allocated: 2.2586770057678223  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 5.71484375 GB
+    Memory Allocated: 0.09790563583374023  GigaBytes
+Max Memory Allocated: 2.2586770057678223  GigaBytes
+
+---------------------------------------- batch 42
+ Nvidia-smi: 5.71484375 GB
+    Memory Allocated: 0.09790563583374023  GigaBytes
+Max Memory Allocated: 2.2586770057678223  GigaBytes
+
+batch 43
+src global  182415
+seeds global  806
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 5.71484375 GB
+    Memory Allocated: 0.08765125274658203  GigaBytes
+Max Memory Allocated: 2.2586770057678223  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 5.71484375 GB
+    Memory Allocated: 0.09003543853759766  GigaBytes
+Max Memory Allocated: 2.2586770057678223  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 5.71484375 GB
+    Memory Allocated: 2.017347812652588  GigaBytes
+Max Memory Allocated: 2.2586770057678223  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 5.71484375 GB
+    Memory Allocated: 2.017489433288574  GigaBytes
+Max Memory Allocated: 2.2586770057678223  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 5.71484375 GB
+    Memory Allocated: 0.09333562850952148  GigaBytes
+Max Memory Allocated: 2.2586770057678223  GigaBytes
+
+---------------------------------------- batch 43
+ Nvidia-smi: 5.71484375 GB
+    Memory Allocated: 0.09333562850952148  GigaBytes
+Max Memory Allocated: 2.2586770057678223  GigaBytes
+
+batch 44
+src global  198766
+seeds global  884
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 5.71484375 GB
+    Memory Allocated: 0.0942225456237793  GigaBytes
+Max Memory Allocated: 2.2586770057678223  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 5.71484375 GB
+    Memory Allocated: 0.09782171249389648  GigaBytes
+Max Memory Allocated: 2.2586770057678223  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 5.95703125 GB
+    Memory Allocated: 2.2478342056274414  GigaBytes
+Max Memory Allocated: 2.28562593460083  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 5.95703125 GB
+    Memory Allocated: 2.2479896545410156  GigaBytes
+Max Memory Allocated: 2.28562593460083  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 5.95703125 GB
+    Memory Allocated: 0.10132217407226562  GigaBytes
+Max Memory Allocated: 2.28562593460083  GigaBytes
+
+---------------------------------------- batch 44
+ Nvidia-smi: 5.95703125 GB
+    Memory Allocated: 0.10132217407226562  GigaBytes
+Max Memory Allocated: 2.28562593460083  GigaBytes
+
+batch 45
+src global  201999
+seeds global  807
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 5.95703125 GB
+    Memory Allocated: 0.09737396240234375  GigaBytes
+Max Memory Allocated: 2.28562593460083  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 5.95703125 GB
+    Memory Allocated: 0.1000518798828125  GigaBytes
+Max Memory Allocated: 2.28562593460083  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 6.197265625 GB
+    Memory Allocated: 2.262084484100342  GigaBytes
+Max Memory Allocated: 2.2973809242248535  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 6.197265625 GB
+    Memory Allocated: 2.2622265815734863  GigaBytes
+Max Memory Allocated: 2.2973809242248535  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 6.197265625 GB
+    Memory Allocated: 0.1032404899597168  GigaBytes
+Max Memory Allocated: 2.2973809242248535  GigaBytes
+
+---------------------------------------- batch 45
+ Nvidia-smi: 6.197265625 GB
+    Memory Allocated: 0.1032404899597168  GigaBytes
+Max Memory Allocated: 2.2973809242248535  GigaBytes
+
+batch 46
+src global  222649
+seeds global  927
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 6.197265625 GB
+    Memory Allocated: 0.10509061813354492  GigaBytes
+Max Memory Allocated: 2.2973809242248535  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 6.197265625 GB
+    Memory Allocated: 0.10840988159179688  GigaBytes
+Max Memory Allocated: 2.2973809242248535  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 6.615234375 GB
+    Memory Allocated: 2.5898633003234863  GigaBytes
+Max Memory Allocated: 2.631965160369873  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 6.615234375 GB
+    Memory Allocated: 2.590026378631592  GigaBytes
+Max Memory Allocated: 2.631965160369873  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 6.615234375 GB
+    Memory Allocated: 0.1128835678100586  GigaBytes
+Max Memory Allocated: 2.631965160369873  GigaBytes
+
+---------------------------------------- batch 46
+ Nvidia-smi: 6.615234375 GB
+    Memory Allocated: 0.1128835678100586  GigaBytes
+Max Memory Allocated: 2.631965160369873  GigaBytes
+
+batch 47
+src global  216370
+seeds global  958
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 6.615234375 GB
+    Memory Allocated: 0.10389041900634766  GigaBytes
+Max Memory Allocated: 2.631965160369873  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 6.615234375 GB
+    Memory Allocated: 0.10696220397949219  GigaBytes
+Max Memory Allocated: 2.631965160369873  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 6.6171875 GB
+    Memory Allocated: 2.494609832763672  GigaBytes
+Max Memory Allocated: 2.631965160369873  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 6.6171875 GB
+    Memory Allocated: 2.4947781562805176  GigaBytes
+Max Memory Allocated: 2.631965160369873  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 6.6171875 GB
+    Memory Allocated: 0.11052560806274414  GigaBytes
+Max Memory Allocated: 2.631965160369873  GigaBytes
+
+---------------------------------------- batch 47
+ Nvidia-smi: 6.6171875 GB
+    Memory Allocated: 0.11052560806274414  GigaBytes
+Max Memory Allocated: 2.631965160369873  GigaBytes
+
+batch 48
+src global  218881
+seeds global  879
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 6.6171875 GB
+    Memory Allocated: 0.10599613189697266  GigaBytes
+Max Memory Allocated: 2.631965160369873  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 6.6171875 GB
+    Memory Allocated: 0.10896682739257812  GigaBytes
+Max Memory Allocated: 2.631965160369873  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 6.6171875 GB
+    Memory Allocated: 2.5093441009521484  GigaBytes
+Max Memory Allocated: 2.631965160369873  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 6.6171875 GB
+    Memory Allocated: 2.5094985961914062  GigaBytes
+Max Memory Allocated: 2.631965160369873  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 6.6171875 GB
+    Memory Allocated: 0.11294126510620117  GigaBytes
+Max Memory Allocated: 2.631965160369873  GigaBytes
+
+---------------------------------------- batch 48
+ Nvidia-smi: 6.6171875 GB
+    Memory Allocated: 0.11294126510620117  GigaBytes
+Max Memory Allocated: 2.631965160369873  GigaBytes
+
+batch 49
+src global  1920498
+seeds global  163817
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 7.333984375 GB
+    Memory Allocated: 0.7423348426818848  GigaBytes
+Max Memory Allocated: 2.631965160369873  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 7.333984375 GB
+    Memory Allocated: 0.9059057235717773  GigaBytes
+Max Memory Allocated: 2.631965160369873  GigaBytes
+
