@@ -245,7 +245,7 @@ def	generate_dataloader_bucket_block(raw_graph, full_block_dataloader, args):
 			
 			if layer_id == 0:
 
-				bucket_partitioner = Bucket_Partitioner(layer_block, args)
+				bucket_partitioner = Bucket_Partitioner(layer_block, args, full_block_dataloader)
 				batched_output_nid_list,weights_list,batch_list_generation_time, p_len_list = bucket_partitioner.init_partition()
 
 				num_batch=len(batched_output_nid_list)

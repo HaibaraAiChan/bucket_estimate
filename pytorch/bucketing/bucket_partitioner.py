@@ -3,6 +3,7 @@ import dgl
 import sys
 sys.path.insert(0,'..')
 sys.path.insert(0,'../utils/')
+sys.path.insert(0,'/home/cc/Betty_baseline/pytorch/bucketing')
 # sys.path.insert(0,'/home/cc/Betty_baseline/pytorch/utils')
 from numpy.core.numeric import Infinity
 import multiprocessing as mp
@@ -22,6 +23,25 @@ from math import ceil
 from cpu_mem_usage import get_memory
 from my_utils import torch_is_in_1d
 import pdb
+
+from gen_K_hop_neighbors import generate_K_hop_neighbors
+from grouping_float import grouping_fanout_1
+
+def print_(list_):
+    for ll in list_:
+        print('length ', len(ll))
+        print(ll )
+        print()
+
+def get_sum(list_idx, mem):
+    res=0
+    print(mem)
+    print(list_idx)
+    for idx in list_idx:
+        print(idx)
+        temp = mem[idx] 
+        res += temp
+    return res
 
 def asnumpy(input):
 	return input.cpu().detach().numpy()
@@ -47,8 +67,9 @@ def my_sort_1d(val):  # add new function here, to replace torch.sort()
 		return sorted_val, idx
 
 class Bucket_Partitioner:  # ----------------------*** split the output layer block ***---------------------
-	def __init__(self, layer_block, args):
+	def __init__(self, layer_block, args, full_batch_dataloader):
 		# self.balanced_init_ratio=args.balanced_init_ratio
+		self.memory_constraint = 14
 		self.dataset=args.dataset
 		self.layer_block=layer_block # local graph with global nodes indices
 		self.local=False
@@ -77,8 +98,10 @@ class Bucket_Partitioner:  # ----------------------*** split the output layer bl
 		self.red_before=[]
 		self.red_after=[]
 		self.args=args
+		self.full_batch_dataloader = full_batch_dataloader
 		
 		self.in_degrees = self.layer_block.in_degrees()
+		self.K = args.num_batch
 
 	
 
@@ -135,8 +158,17 @@ class Bucket_Partitioner:  # ----------------------*** split the output layer bl
 		src= list(set(in_ids+seeds))
 		return src
 
+	def get_nids_by_degree_bucket_ID(self, bucket_lists, bkt_dst_nodes_list):
+		res=[]
+		for bucket_l in bucket_lists:
+			temp =[]
+			for b in bucket_l:
+				temp.append(bkt_dst_nodes_list[b-1])
+			flattened_list = [element for sublist in temp for element in sublist]
+			res.append(torch.tensor(flattened_list, dtype=torch.long))
 
-
+		return res
+	
 	def gen_batches_seeds_list(self, bkt_dst_nodes_list):
 		print('---||--'*20)
 		if "bucketing" in self.selection_method :
@@ -152,7 +184,106 @@ class Bucket_Partitioner:  # ----------------------*** split the output layer bl
 				self.local_batched_seeds_list = batches_nid_list
 				print(self.weights_list)
 				return
-			if '__' in self.selection_method:
+			if '50_group_' in self.selection_method:
+				fanout_dst_nids = bkt_dst_nodes_list[-1]
+				fanout = len(bkt_dst_nodes_list)
+				if self.args.num_batch >= 1:
+					fanout_batch_size = ceil(len(fanout_dst_nids)/(self.args.num_batch))
+				indices = torch.arange(0,len(fanout_dst_nids)).long()
+				map_output_list = fanout_dst_nids.view(-1)[indices].view(fanout_dst_nids.size())
+				batches_nid_list = [map_output_list[i:i + fanout_batch_size] for i in range(0, len(map_output_list), fanout_batch_size)]
+				src_list, weights_list, time_collection = generate_K_hop_neighbors(self.full_batch_dataloader, self.args, batches_nid_list)
+				redundant_ratio = []
+				for (i, input_nodes) in enumerate(src_list):
+					print(len(input_nodes)/len(batches_nid_list[i])/fanout/0.411)
+					redundant_ratio.append(len(input_nodes)/len(batches_nid_list[i])/fanout/0.411)
+				print('the split redundant ratio ', )
+				print(redundant_ratio)
+				print(len(redundant_ratio))
+				capacity = self.memory_constraint-mean(redundant_ratio)*55.22/self.args.num_batch
+				print('capacity: ', capacity)
+				return
+				adjust =1000
+				# estimated_mem = Estimate_MEM(bkt_dst_nodes_list)
+				estimated_mem = [0.031600323026579925, 0.053446445057834434, 0.04691033726707499, 0.07212925883696267, 0.0954132446010461, 0.13250813817436047, 0.16562827234049787, 0.18126462923828512, 0.21130672298992675, 0.25300076929852366, 0.2809490893635299, 0.28129312471449885, 0.33190986587898375, 0.36230173630435075, 0.3834405979819673, 0.38852240658495635, 0.4104866247767621, 0.427057239492208, 0.45594087203866557, 0.4482479429953582, 0.494359802184077, 0.5455698065359045, 0.5838345744003708, 0.5952225418284881, 0.6416539241286929, 0.6823511784373357, 0.666389745486164, 0.7496792492248849, 0.7371837931190246, 0.7577242599083827, 0.7889046908693763, 0.8683255342292655, 0.9311795745279405, 0.8477295250909833, 0.9436967117287708, 0.9945587138174034, 1.0309573992937635, 1.0749793136129961, 1.0747561831684673, 1.1274098691910925,1.2304586825034851, 1.1488268197006972, 1.3300050600793791, 1.2305013597063668, 1.339544299635952, 1.363191539881995, 1.501307503974184, 1.4590092047286807, 1.473764838436366]
+				Groups_mem_list, G_BUCKET_ID_list = grouping_fanout_1(adjust, estimated_mem, capacity=1.7)
+				batches_nid_list =  batches_nid_list + G_BUCKET_ID_list
+				self.weights_list = weights_list
+				self.local_batched_seeds_list = batches_nid_list
+			if '25_group_' in self.selection_method:
+				# print_(bkt_dst_nodes_list)
+				# print()
+				fanout_dst_nids = bkt_dst_nodes_list[-1]
+				fanout = len(bkt_dst_nodes_list)
+				while(True):
+					if self.args.num_batch >= 1:
+						fanout_batch_size = ceil(len(fanout_dst_nids)/(self.K))
+					indices = torch.arange(0,len(fanout_dst_nids)).long()
+					map_output_list = fanout_dst_nids.view(-1)[indices].view(fanout_dst_nids.size())
+					# print('map_output_list')
+					# print(map_output_list)
+					split_batches_nid_list = [map_output_list[i:i + fanout_batch_size] for i in range(0, len(map_output_list), fanout_batch_size)]
+					# print('split_batches_nid_list')
+					# print(split_batches_nid_list)
+					ct = time.time()
+					src_list, weights_list, time_collection = generate_K_hop_neighbors(self.full_batch_dataloader, self.args, split_batches_nid_list)
+					print('generate_K_hop_neighbors time ', time.time()-ct)
+					redundant_ratio = []
+					for (i, input_nodes) in enumerate(src_list):
+						print(len(input_nodes)/len(split_batches_nid_list[i])/fanout/0.411)
+						redundant_ratio.append(len(input_nodes)/len(split_batches_nid_list[i])/fanout/0.411)
+					print('the split redundant ratio ', )
+					print(redundant_ratio)
+					print(len(redundant_ratio))
+					if self.memory_constraint <= max(redundant_ratio)*30.85/self.K:
+						self.K = self.K + 1
+					else:
+						
+						break
+				
+				capacity_est = self.memory_constraint-max(redundant_ratio)*30.85/self.K
+				print('average memory estimation for each split fanout bucket batch', mean(redundant_ratio)*30.85/self.K)
+				print('capacity est: ', capacity_est)
+				
+				adjust =1000
+				# estimated_mem = Estimate_MEM(bkt_dst_nodes_list)
+				estimated_mem = [0.004248619079589844, 0.010951995849609375, 0.024433135986328125, 0.040657997131347656, 0.054093360900878906, 0.0782003402709961, 0.10260200500488281, 0.1095743179321289, 0.1300048828125, 0.1599140167236328, 0.17887401580810547, 0.17557525634765625, 0.21084308624267578, 0.23604297637939453, 0.24538421630859375, 0.2514839172363281, 0.26112842559814453,0.27727317810058594,0.29793834686279297,0.29139232635498047,0.3255643844604492,0.3578939437866211,0.38632965087890625,0.3936424255371094]
+				# capacity_imp = min(max(estimated_mem), capacity_est)
+				capacity_imp = max(estimated_mem)
+				if max(estimated_mem) > capacity:
+					print('max degree bucket (1-fanout-1) >capacity')
+					print('we can reschedule split K-->K+1 ')
+					self.K = self.K + 1
+
+				Groups_mem_list, G_BUCKET_ID_list = grouping_fanout_1(adjust, estimated_mem, capacity = capacity_imp)
+				print("G_BUCKET_ID_list" , G_BUCKET_ID_list)
+
+				print("G_BUCKET_ID_list length" , len(G_BUCKET_ID_list))
+				g_bucket_nids_list=self.get_nids_by_degree_bucket_ID(G_BUCKET_ID_list, bkt_dst_nodes_list)
+
+				print('split_batches_nid_list ', len(split_batches_nid_list))
+    
+				if len(split_batches_nid_list)>=len(g_bucket_nids_list):
+					for j in range(len(g_bucket_nids_list)):
+						tensor_group = torch.tensor(g_bucket_nids_list[j], dtype=torch.long)
+						current_group_mem = get_sum(G_BUCKET_ID_list[j], estimated_mem)
+						print("current group_mem ", current_group_mem)
+						# print(split_batches_nid_list[j])
+						# print(type(split_batches_nid_list[j]))
+						split_batches_nid_list[j] = torch.cat((split_batches_nid_list[j],tensor_group))
+						print('the new estimated memory cost(GB) for batch '+ str(j)+ " "+str(current_group_mem+ mean(redundant_ratio)*30.85/self.K))
+
+				else:
+					print("length of split fanout is smaller than len of group bucket_nids_list")
+					return
+				print('the length of split_batches_nid_list ', len(split_batches_nid_list))
+				
+				self.weights_list = weights_list
+				self.local_batched_seeds_list = split_batches_nid_list
+				return
+						
+			
+			elif '50__' in self.selection_method:
 				print('__ ')
 				print(len(bkt_dst_nodes_list))
 				# for ii in range(len(bkt_dst_nodes_list)):
@@ -194,7 +325,81 @@ class Bucket_Partitioner:  # ----------------------*** split the output layer bl
 				print(self.weights_list)
 				# pdb.set_trace()
 				return
-			if 'custom' in self.selection_method:
+			elif '100__' in self.selection_method:
+				print('__ ')
+				print(len(bkt_dst_nodes_list))
+				
+				print('group 1 start =========================')
+				group1 = bkt_dst_nodes_list[:40]
+				group1 = torch.cat(group1)
+    
+				print('group 2 start=========================')
+				group2 =  bkt_dst_nodes_list[40:53]
+				group2 = torch.cat(group2)
+    
+				print('group 3 start=========================')
+				group3 =  bkt_dst_nodes_list[53:63]
+				group3 = torch.cat(group3)
+
+				print('group 4 start=========================')
+				group4 =  bkt_dst_nodes_list[63:70]
+				group4 = torch.cat(group4)
+
+				print('group 5 start=========================')
+				group5 =  bkt_dst_nodes_list[70:76]
+				group5 = torch.cat(group5)
+    
+				print('group 6 start=========================')
+				group6 =  bkt_dst_nodes_list[76:81]
+				group6 = torch.cat(group6)
+				print('group 7 start=========================')
+				group7 =  bkt_dst_nodes_list[81:86]
+				group7 = torch.cat(group7)
+				print('group 8 start=========================')
+				group8 =  bkt_dst_nodes_list[86:90]
+				group8 = torch.cat(group8)
+				print('group 9 start=========================')
+				group9 =  bkt_dst_nodes_list[90:93]
+				group9 = torch.cat(group9)
+				print('group 10 start=========================')
+				group10 =  bkt_dst_nodes_list[93:96]
+				group10 = torch.cat(group10)    
+				print('group 11 start=========================')
+				group11 =  bkt_dst_nodes_list[96:99]
+				group11 = torch.cat(group11)  
+				fanout_dst_nids = bkt_dst_nodes_list[-1]
+				
+				if self.args.num_batch > 11:
+					fanout_batch_size = ceil(len(fanout_dst_nids)/(self.args.num_batch-11))
+				indices = torch.arange(0,len(fanout_dst_nids)).long()
+				map_output_list = fanout_dst_nids.view(-1)[indices].view(fanout_dst_nids.size())
+				batches_nid_list = [map_output_list[i:i + fanout_batch_size] for i in range(0, len(map_output_list), fanout_batch_size)]
+				batches_nid_list.insert(0, group11)
+				batches_nid_list.insert(0, group10)
+				batches_nid_list.insert(0, group9)
+				batches_nid_list.insert(0, group8)
+				batches_nid_list.insert(0, group7)
+				batches_nid_list.insert(0, group6)
+				batches_nid_list.insert(0, group5)
+				batches_nid_list.insert(0, group4)				
+				batches_nid_list.insert(0, group3)
+				batches_nid_list.insert(0, group2)
+				batches_nid_list.insert(0, group1)
+				
+
+				print(len(batches_nid_list))
+				length = len(self.output_nids)
+				print('length ',length)
+				print('group1 ', len(group1))
+				print('group2 ', len(group2))
+				print('group7 ', len(group7))
+				self.weights_list = [len(batch_nids)/length  for batch_nids in batches_nid_list]
+				self.local_batched_seeds_list = batches_nid_list
+				print(self.weights_list)
+				# pdb.set_trace()
+				return
+			
+			elif 'custom' in self.selection_method:
 				print('custom ')
 				print(len(bkt_dst_nodes_list))
 				for ii in range(len(bkt_dst_nodes_list)):
@@ -323,28 +528,25 @@ class Bucket_Partitioner:  # ----------------------*** split the output layer bl
 
 	
 	def local_to_global(self):
-		# print('-'*40)
+
 		# print('src global ', self.src_nids_tensor)
 
 		for local_seed_nids in self.local_batched_seeds_list:
 			# print('local nid ', local_seed_nids)
 			
-			# if 'range' in self.selection_method:
-			# 	self.global_batched_seeds_list.append(gather_row(self.src_nids_tensor, local_seed_nids))
-			# if 'random' in self.selection_method or 'fanout' in self.selection_method:
 			local_all = torch.tensor(list(range(len(self.src_nids_tensor))))
 			
 			eqidx = nonzero_1d(torch_is_in_1d(local_all, local_seed_nids))
-			# print('eqidx ', eqidx)
+			
 			
 			after_sort = gather_row(self.src_nids_tensor, eqidx)
 				
-			# print('after sort based on full batch order ', after_sort)
+			
 			self.global_batched_seeds_list.append(after_sort)
 				
-			# print()
+			
 		self.local=False
-		# print('-'*40)
+		print('len local_batched_seeds_list ', len(self.local_batched_seeds_list))
 		return
 
 

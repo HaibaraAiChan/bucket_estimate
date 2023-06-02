@@ -27,10 +27,10 @@ num_epoch=10
 
 # fan_out=10,25
 # python $File --fan-out=$fan_out --num-layers=2 --num-epochs=$num_epoch --num-hidden=1 --dataset=$data
-fan_out=10,50
-python $File --fan-out=$fan_out --num-layers=2 --num-epochs=$num_epoch --num-hidden=1 --dataset=$data
-# fan_out=10,100
+# fan_out=10,50
 # python $File --fan-out=$fan_out --num-layers=2 --num-epochs=$num_epoch --num-hidden=1 --dataset=$data
+fan_out=10,100
+python $File --fan-out=$fan_out --num-layers=2 --num-epochs=$num_epoch --num-hidden=1 --dataset=$data
 
 
 # fan_out=10,25,30
