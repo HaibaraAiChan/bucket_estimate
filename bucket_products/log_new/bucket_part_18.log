@@ -1,0 +1,395 @@
+main start at this time 1685738663.5478265
+-----------------------------------------before load data 
+ Nvidia-smi: 0.166015625 GB
+    Memory Allocated: 0.0  GigaBytes
+Max Memory Allocated: 0.0  GigaBytes
+
+#nodes: 2449029
+#edges: 123718024
+#classes: 47
+success----------------------------------------
+196571
+39255
+2164782
+# Nodes: 2400608
+# Edges: 123718024
+# Train: 196571
+# Val: 39255
+# Test: 2164782
+# Classes: 47
+
+----------------------------------------start of run function 
+ Nvidia-smi: 0.166015625 GB
+    Memory Allocated: 0.0  GigaBytes
+Max Memory Allocated: 0.0  GigaBytes
+
+len(bkt)  173
+len(bkt)  221
+len(bkt)  374
+len(bkt)  456
+len(bkt)  445
+len(bkt)  550
+len(bkt)  655
+len(bkt)  512
+len(bkt)  576
+len(bkt)  640
+len(bkt)  624
+len(bkt)  583
+len(bkt)  615
+len(bkt)  695
+len(bkt)  673
+len(bkt)  614
+len(bkt)  556
+len(bkt)  604
+len(bkt)  584
+len(bkt)  572
+len(bkt)  586
+len(bkt)  592
+len(bkt)  648
+len(bkt)  645
+len(bkt)  183378
+---||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||--
+
+ the number of batches:  18
+the ratio of the output nids to be processed:  0.9328843013465873
+weights list of these nids:  [0.051828601370497177, 0.051828601370497177, 0.051828601370497177, 0.051828601370497177, 0.051828601370497177, 0.051828601370497177, 0.051828601370497177, 0.051828601370497177, 0.051828601370497177, 0.051828601370497177, 0.051828601370497177, 0.051828601370497177, 0.051828601370497177, 0.051828601370497177, 0.051828601370497177, 0.051828601370497177, 0.051828601370497177, 0.05179807804813528]
+check_connections_block*********************************
+num of batch  18
+check_connections_block*********************************
+generate_K_hop_neighbors time  58.059587240219116
+8.249760941979353
+8.26814046772263
+8.263450058606233
+8.230034475939922
+8.21692807816457
+8.235345814980079
+8.278543432137614
+8.220758738155762
+8.24249128548734
+8.28165763452447
+8.236196011337226
+8.231486496684713
+8.240762234468871
+8.265427481594203
+8.215113052233582
+8.247133930763448
+8.282374092128807
+8.240934696551951
+the split redundant ratio 
+[8.249760941979353, 8.26814046772263, 8.263450058606233, 8.230034475939922, 8.21692807816457, 8.235345814980079, 8.278543432137614, 8.220758738155762, 8.24249128548734, 8.28165763452447, 8.236196011337226, 8.231486496684713, 8.240762234468871, 8.265427481594203, 8.215113052233582, 8.247133930763448, 8.282374092128807, 8.240934696551951]
+18
+capacity est:  0.8049310698792382
+capacity  393
+sorted_dict  {23: 393, 22: 386, 21: 357, 20: 325, 18: 297, 19: 291, 17: 277, 16: 261, 15: 251, 14: 245, 13: 236, 12: 210, 10: 178, 11: 175, 9: 159, 8: 130, 7: 109, 6: 102, 5: 78, 4: 54, 3: 40, 2: 24, 1: 10, 0: 4}
+
+weights after sort [393, 386, 357, 325, 297, 291, 277, 261, 251, 245, 236, 210, 178, 175, 159, 130, 109, 102, 78, 54, 40, 24, 10, 4]
+
+remove bucket_id:  [0]
+original bucket_id :,  [23]
+remove weights:  [393], 		------------sum 393
+
+before remove weights,  [393, 386, 357, 325, 297, 291, 277, 261, 251, 245, 236, 210, 178, 175, 159, 130, 109, 102, 78, 54, 40, 24, 10, 4]
+after remove pre pack weights,  [386, 357, 325, 297, 291, 277, 261, 251, 245, 236, 210, 178, 175, 159, 130, 109, 102, 78, 54, 40, 24, 10, 4]
+
+remove bucket_id:  [4, 16]
+original bucket_id :,  [19, 6]
+remove weights:  [291 102], 		------------sum 393
+
+before remove weights,  [386, 357, 325, 297, 291, 277, 261, 251, 245, 236, 210, 178, 175, 159, 130, 109, 102, 78, 54, 40, 24, 10, 4]
+after remove pre pack weights,  [386, 357, 325, 297, 277, 261, 251, 245, 236, 210, 178, 175, 159, 130, 109, 78, 54, 40, 24, 10, 4]
+
+remove bucket_id:  [5, 15, 16]
+original bucket_id :,  [16, 5, 4]
+remove weights:  [261  78  54], 		------------sum 393
+
+before remove weights,  [386, 357, 325, 297, 277, 261, 251, 245, 236, 210, 178, 175, 159, 130, 109, 78, 54, 40, 24, 10, 4]
+after remove pre pack weights,  [386, 357, 325, 297, 277, 251, 245, 236, 210, 178, 175, 159, 130, 109, 40, 24, 10, 4]
+
+remove bucket_id:  [9, 10, 14]
+original bucket_id :,  [10, 11, 3]
+remove weights:  [178 175  40], 		------------sum 393
+
+before remove weights,  [386, 357, 325, 297, 277, 251, 245, 236, 210, 178, 175, 159, 130, 109, 40, 24, 10, 4]
+after remove pre pack weights,  [386, 357, 325, 297, 277, 251, 245, 236, 210, 159, 130, 109, 24, 10, 4]
+
+remove bucket_id:  [8, 9, 12]
+original bucket_id :,  [12, 9, 2]
+remove weights:  [210 159  24], 		------------sum 393
+
+before remove weights,  [386, 357, 325, 297, 277, 251, 245, 236, 210, 159, 130, 109, 24, 10, 4]
+after remove pre pack weights,  [386, 357, 325, 297, 277, 251, 245, 236, 130, 109, 10, 4]
+
+remove bucket_id:  [5, 8, 10]
+original bucket_id :,  [15, 8, 1]
+remove weights:  [251 130  10], 		------------sum 391
+
+before remove weights,  [386, 357, 325, 297, 277, 251, 245, 236, 130, 109, 10, 4]
+after remove pre pack weights,  [386, 357, 325, 297, 277, 245, 236, 109, 4]
+
+remove bucket_id:  [0, 8]
+original bucket_id :,  [22, 0]
+remove weights:  [386   4], 		------------sum 390
+
+before remove weights,  [386, 357, 325, 297, 277, 245, 236, 109, 4]
+after remove pre pack weights,  [357, 325, 297, 277, 245, 236, 109]
+
+remove bucket_id:  [3, 6]
+original bucket_id :,  [17, 7]
+remove weights:  [277 109], 		------------sum 386
+
+before remove weights,  [357, 325, 297, 277, 245, 236, 109]
+after remove pre pack weights,  [357, 325, 297, 245, 236]
+
+remove bucket_id:  [0]
+original bucket_id :,  [21]
+remove weights:  [357], 		------------sum 357
+
+before remove weights,  [357, 325, 297, 245, 236]
+after remove pre pack weights,  [325, 297, 245, 236]
+
+remove bucket_id:  [0]
+original bucket_id :,  [20]
+remove weights:  [325], 		------------sum 325
+
+before remove weights,  [325, 297, 245, 236]
+after remove pre pack weights,  [297, 245, 236]
+
+remove bucket_id:  [0]
+original bucket_id :,  [18]
+remove weights:  [297], 		------------sum 297
+
+before remove weights,  [297, 245, 236]
+after remove pre pack weights,  [245, 236]
+
+remove bucket_id:  [0]
+original bucket_id :,  [14]
+remove weights:  [245], 		------------sum 245
+
+before remove weights,  [245, 236]
+after remove pre pack weights,  [236]
+the last batch value is  236
+G_BUCKET_ID_list [[23], [19, 6], [16, 5, 4], [10, 11, 3], [12, 9, 2], [15, 8, 1], [22, 0], [17, 7], [21], [20], [18], [14], [13]]
+G_BUCKET_ID_list length 13
+split_batches_nid_list  18
+the length of split_batches_nid_list  18
+len local_batched_seeds_list  18
+ the number of batches:  18
+check_connections_block*********************************
+num of batch  18
+check_connections_block*********************************
+----------------------------------------after generate_dataloader_bucket_block 
+ Nvidia-smi: 1.34375 GB
+    Memory Allocated: 0.000934600830078125  GigaBytes
+Max Memory Allocated: 0.000934600830078125  GigaBytes
+
+batch 0
+src global  892262
+seeds global  10836
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 1.677734375 GB
+    Memory Allocated: 0.33340930938720703  GigaBytes
+Max Memory Allocated: 0.33340930938720703  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 1.78515625 GB
+    Memory Allocated: 0.352170467376709  GigaBytes
+Max Memory Allocated: 0.352170467376709  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 16.86328125 GB
+    Memory Allocated: 15.055270671844482  GigaBytes
+Max Memory Allocated: 15.30065393447876  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 16.86328125 GB
+    Memory Allocated: 15.057621479034424  GigaBytes
+Max Memory Allocated: 15.30065393447876  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 16.87109375 GB
+    Memory Allocated: 0.37955665588378906  GigaBytes
+Max Memory Allocated: 15.30065393447876  GigaBytes
+
+---------------------------------------- batch 0
+ Nvidia-smi: 16.87109375 GB
+    Memory Allocated: 0.37955665588378906  GigaBytes
+Max Memory Allocated: 15.30065393447876  GigaBytes
+
+batch 1
+src global  892401
+seeds global  11322
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 16.87109375 GB
+    Memory Allocated: 0.3464646339416504  GigaBytes
+Max Memory Allocated: 15.30065393447876  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 16.87109375 GB
+    Memory Allocated: 0.36540842056274414  GigaBytes
+Max Memory Allocated: 15.30065393447876  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 17.6796875 GB
+    Memory Allocated: 15.072343349456787  GigaBytes
+Max Memory Allocated: 15.319021701812744  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 17.6796875 GB
+    Memory Allocated: 15.07469367980957  GigaBytes
+Max Memory Allocated: 15.319021701812744  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 17.6796875 GB
+    Memory Allocated: 0.38854551315307617  GigaBytes
+Max Memory Allocated: 15.319021701812744  GigaBytes
+
+---------------------------------------- batch 1
+ Nvidia-smi: 17.6796875 GB
+    Memory Allocated: 0.38854551315307617  GigaBytes
+Max Memory Allocated: 15.319021701812744  GigaBytes
+
+batch 2
+src global  892992
+seeds global  11703
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 17.6796875 GB
+    Memory Allocated: 0.35561466217041016  GigaBytes
+Max Memory Allocated: 15.319021701812744  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 17.6796875 GB
+    Memory Allocated: 0.37410497665405273  GigaBytes
+Max Memory Allocated: 15.319021701812744  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 17.6875 GB
+    Memory Allocated: 15.036563396453857  GigaBytes
+Max Memory Allocated: 15.319021701812744  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 17.6875 GB
+    Memory Allocated: 15.03891372680664  GigaBytes
+Max Memory Allocated: 15.319021701812744  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 17.6875 GB
+    Memory Allocated: 0.3971562385559082  GigaBytes
+Max Memory Allocated: 15.319021701812744  GigaBytes
+
+---------------------------------------- batch 2
+ Nvidia-smi: 17.6875 GB
+    Memory Allocated: 0.3971562385559082  GigaBytes
+Max Memory Allocated: 15.319021701812744  GigaBytes
+
+batch 3
+src global  892607
+seeds global  11826
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 17.6875 GB
+    Memory Allocated: 0.36389970779418945  GigaBytes
+Max Memory Allocated: 15.319021701812744  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 17.6875 GB
+    Memory Allocated: 0.38298845291137695  GigaBytes
+Max Memory Allocated: 15.319021701812744  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 17.6875 GB
+    Memory Allocated: 15.068373680114746  GigaBytes
+Max Memory Allocated: 15.319021701812744  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 17.6875 GB
+    Memory Allocated: 15.07072401046753  GigaBytes
+Max Memory Allocated: 15.319021701812744  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 17.6875 GB
+    Memory Allocated: 0.40570831298828125  GigaBytes
+Max Memory Allocated: 15.319021701812744  GigaBytes
+
+---------------------------------------- batch 3
+ Nvidia-smi: 17.6875 GB
+    Memory Allocated: 0.40570831298828125  GigaBytes
+Max Memory Allocated: 15.319021701812744  GigaBytes
+
+batch 4
+src global  892358
+seeds global  11568
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 17.6875 GB
+    Memory Allocated: 0.3724837303161621  GigaBytes
+Max Memory Allocated: 15.319021701812744  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 17.6875 GB
+    Memory Allocated: 0.39057397842407227  GigaBytes
+Max Memory Allocated: 15.319021701812744  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 17.6875 GB
+    Memory Allocated: 14.981516361236572  GigaBytes
+Max Memory Allocated: 15.319021701812744  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 17.6875 GB
+    Memory Allocated: 14.983600616455078  GigaBytes
+Max Memory Allocated: 15.319021701812744  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 17.6875 GB
+    Memory Allocated: 0.4136819839477539  GigaBytes
+Max Memory Allocated: 15.319021701812744  GigaBytes
+
+---------------------------------------- batch 4
+ Nvidia-smi: 17.6875 GB
+    Memory Allocated: 0.4136819839477539  GigaBytes
+Max Memory Allocated: 15.319021701812744  GigaBytes
+
+batch 5
+src global  900235
+seeds global  11546
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 17.6875 GB
+    Memory Allocated: 0.38364076614379883  GigaBytes
+Max Memory Allocated: 15.319021701812744  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 17.6875 GB
+    Memory Allocated: 0.40281248092651367  GigaBytes
+Max Memory Allocated: 15.319021701812744  GigaBytes
+
+----------------------------------------after model forward
+ Nvidia-smi: 18.515625 GB
+    Memory Allocated: 15.141598224639893  GigaBytes
+Max Memory Allocated: 15.38931131362915  GigaBytes
+
+----------------------------------------after loss_fcn calculation
+ Nvidia-smi: 18.515625 GB
+    Memory Allocated: 15.143948554992676  GigaBytes
+Max Memory Allocated: 15.38931131362915  GigaBytes
+
+----------------------------------------after loss backward
+ Nvidia-smi: 18.515625 GB
+    Memory Allocated: 0.4248361587524414  GigaBytes
+Max Memory Allocated: 15.38931131362915  GigaBytes
+
+---------------------------------------- batch 5
+ Nvidia-smi: 18.515625 GB
+    Memory Allocated: 0.4248361587524414  GigaBytes
+Max Memory Allocated: 15.38931131362915  GigaBytes
+
+batch 6
+src global  1813942
+seeds global  183970
+----------------------------------------after load_block_subtensor
+ Nvidia-smi: 18.515625 GB
+    Memory Allocated: 0.7323012351989746  GigaBytes
+Max Memory Allocated: 15.38931131362915  GigaBytes
+
+----------------------------------------after blocks to device
+ Nvidia-smi: 18.515625 GB
+    Memory Allocated: 0.8528141975402832  GigaBytes
+Max Memory Allocated: 15.38931131362915  GigaBytes
+

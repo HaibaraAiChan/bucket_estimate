@@ -52,12 +52,10 @@ def get_index_by_value(dictionary, values_list):
     n = len(values_list)
     values_list = list(values_list)
     keys = []
-    print('values_list ', values_list)
-    print('keys ------')
+    # print('values_list ', values_list)
+    # print('keys ------')
     
     for va in values_list:
-        print('value' , va)
-        print('dictionary ', dictionary)
         m = values_list.count(va)
         idx = [key for key, value in dictionary.items() if value == va]
         if m == len(idx):
@@ -67,10 +65,9 @@ def get_index_by_value(dictionary, values_list):
             if idx[0] not in keys:
                 keys += idx[:m]
         
-        print(keys)
-    print('keys ------end')
+        # print(keys)
+    # print('keys ------end')
     return keys
-
 
 
 
@@ -78,18 +75,16 @@ def split_all(weights, values, capacity):
     
     # weights.sort(reverse=True)
     sorted_indices, sorted_values, my_dict, sorted_dict = sort_with_original_index(weights)
-    print('sorted_dict ', sorted_dict)
-    print()
-    print('weights after sort', sorted_values)
+    # print('sorted_dict ', sorted_dict)
+    # print()
+    # print('weights after sort', sorted_values)
     weights = sorted_values
     values = sorted_values
     GROUPS_weight =[]
     GROUPS_bucket_idx =[]
-    while len(weights)>=1:
+    while len(weights)>1:
         if sum(weights)<= capacity:
-            # print('the last batch total value is ', sum(weights))
-            # print("Maximum values:", sum(weights))
-            # print('last batch items values ', weights)
+
             original_index = get_index_by_value(sorted_dict, weights)
             GROUPS_weight.append(weights)
             GROUPS_bucket_idx.append(original_index)
@@ -100,17 +95,12 @@ def split_all(weights, values, capacity):
             res_tmp = np.array(weights)[packs[0]]
             GROUPS_weight.append(list(res_tmp))
             
-            print("Maximum values:", max_values[0])
+
             original_index = get_index_by_value(sorted_dict, res_tmp)
             GROUPS_bucket_idx.append(original_index)
-            print()
-            print("remove bucket_id: ",packs[0])
-            print('original bucket_id :, ', original_index)
-            print("remove weights:  ", res_tmp)
-            print()
-            print('before remove weights, ',weights)
+
             weights = remove_items_by_indices(weights, packs[0])
-            print('after remove pre pack weights, ', weights)
+
             values = weights
                 
     if len(weights)==1 :
@@ -123,23 +113,22 @@ def split_all(weights, values, capacity):
     return GROUPS_weight, GROUPS_bucket_idx
 
 def main():
+
     # weights = [2, 3, 4, 5, 2, 1]
     # values = [2, 3, 4, 5, 2, 1]
     adjust = 1000
     weights = [0.031600323026579925, 0.053446445057834434, 0.04691033726707499, 0.07212925883696267, 0.0954132446010461, 0.13250813817436047, 0.16562827234049787, 0.18126462923828512, 0.21130672298992675, 0.25300076929852366, 0.2809490893635299, 0.28129312471449885, 0.33190986587898375, 0.36230173630435075, 0.3834405979819673, 0.38852240658495635, 0.4104866247767621, 0.427057239492208, 0.45594087203866557, 0.4482479429953582, 0.494359802184077, 0.5455698065359045, 0.5838345744003708, 0.5952225418284881, 0.6416539241286929, 0.6823511784373357, 0.666389745486164, 0.7496792492248849, 0.7371837931190246, 0.7577242599083827, 0.7889046908693763, 0.8683255342292655, 0.9311795745279405, 0.8477295250909833, 0.9436967117287708, 0.9945587138174034, 1.0309573992937635, 1.0749793136129961, 1.0747561831684673, 1.1274098691910925,1.2304586825034851, 1.1488268197006972, 1.3300050600793791, 1.2305013597063668, 1.339544299635952, 1.363191539881995, 1.501307503974184, 1.4590092047286807, 1.473764838436366]
     weights = [int(item * adjust) for item in weights]
-    # print('weights after preprocess ')
-    # print(weights)
+
     print()
     values =  weights 
     capacity = 7 * adjust
+    # capacity = 9 * adjust
     
     GROUPS_weight, GROUPS_bucket_idx = split_all(weights, values, capacity)
-    print()
-    print('GROUPS_weight ')
+    
     for itm in GROUPS_weight:
         tmp = [it/adjust for it in itm]
-        print(str(tmp)+ ', sum memory of current group: '+ str(sum(tmp)))
     print()
     print('bucket ids in each group ')
     for itm in GROUPS_bucket_idx:

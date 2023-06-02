@@ -275,12 +275,12 @@ def main():
 	# argparser.add_argument('--dataset', type=str, default='reddit')
 	# argparser.add_argument('--aggre', type=str, default='mean')
 	argparser.add_argument('--aggre', type=str, default='lstm')
-
-	argparser.add_argument('--selection-method', type=str, default='range_bucketing')
+	argparser.add_argument('--selection-method', type=str, default='25_group_bucketing')
+	# argparser.add_argument('--selection-method', type=str, default='range_bucketing')
 	# argparser.add_argument('--selection-method', type=str, default='random_bucketing')
 	# argparser.add_argument('--selection-method', type=str, default='fanout_bucketing')
 	# argparser.add_argument('--selection-method', type=str, default='custom_bucketing')
-	argparser.add_argument('--num-batch', type=int, default=18)
+	argparser.add_argument('--num-batch', type=int, default=19)
 
 	argparser.add_argument('--num-runs', type=int, default=1)
 	argparser.add_argument('--num-epochs', type=int, default=1)

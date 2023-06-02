@@ -78,7 +78,7 @@ def split_all(weights, values, capacity):
     values = sorted_values
     GROUPS_weight =[]
     GROUPS_bucket_idx =[]
-    while len(weights)>1:
+    while len(weights)>=1:
         if sum(weights)<= capacity:
             # print('the last batch total value is ', sum(weights))
             # print("Maximum values:", sum(weights))

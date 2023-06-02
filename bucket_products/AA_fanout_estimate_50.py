@@ -292,7 +292,9 @@ def run(args, device, data):
 					full_batch_dataloader.append(item)
 			
 			if args.num_batch > 1:
+				time0 = time.time()
 				b_block_dataloader, weights_list, time_collection = generate_dataloader_bucket_block(g, full_batch_dataloader, args)
+				time1 = time.time()
 				data_dict = []
 				print('redundancy ratio #input/#seeds/degree')
 				redundant_ratio = []
@@ -318,13 +320,15 @@ def run(args, device, data):
 				print(data_dict)
 				
 				modified_res, res = estimate_mem(data_dict, 100, args.num_hidden, redundant_ratio)
+				fanout_list = [int(fanout) for fanout in args.fan_out.split(',')]
+				fanout = fanout_list[1]
+				print('modified_mem [1-fanout-1]: ', modified_res[:fanout-1])
+				print()
+				print('mem fanout: ', res[fanout-1])
+				print('the modified memory estimation spend (sec)', time.time()-time1)
+				print('the time of number of fanout blocks generation (sec)', time1-time0)
 				
 				
-				print("mem estimated with fanout mem estimate * reduandant ratio")
-				print('1-40 degree')
-				print(sum(modified_res[:40]))
-				print('41-50 degree')
-				print(sum(modified_res[40:50]))
 				
 				
 					

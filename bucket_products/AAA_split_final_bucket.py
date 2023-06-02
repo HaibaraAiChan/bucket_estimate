@@ -34,7 +34,7 @@ from cpu_mem_usage import get_memory
 from statistics import mean
 
 from my_utils import parse_results
-
+from collections import Counter
 
 import pickle
 from utils import Logger
@@ -115,7 +115,10 @@ def load_block_subtensor(nfeat, labels, blocks, device,args):
 	# if args.GPUmem:
 	# 	see_memory_usage("----------------------------------------after batch input features to device")
 	batch_labels = labels[blocks[-1].dstdata[dgl.NID]].to(device)
-	
+	# print('input global nids ', blocks[0].srcdata[dgl.NID])
+	# print('input features: ', batch_inputs)
+	# print('seeds global nids ', blocks[-1].dstdata[dgl.NID])
+	# print('seeds labels : ',batch_labels)
 	# if args.GPUmem:
 	# 	see_memory_usage("----------------------------------------after  batch labels to device")
 	return batch_inputs, batch_labels
@@ -132,6 +135,39 @@ def get_FL_output_num_nids(blocks):
 	output_fl =len(blocks[0].dstdata['_ID'])
 	return output_fl
 
+
+
+
+def print_mem(list_mem):
+    deg = 1
+    for item in list_mem:
+        print('degree '+str(deg) +' '+str(item[0]))
+        deg += 1
+    print()
+    
+def estimate_mem(data_dict, in_feat, hidden_size, redundant_ratio):	
+	
+	estimated_mem_list = []
+	for deg, data in enumerate(data_dict):
+		estimated_mem = 0
+		for i in range (len(data)):
+			sum_b = 0
+			for idx, (key, val) in enumerate(data[i].items()):
+				sum_b = sum_b + key*val
+				if idx ==0: # the input layer, in_feat 100
+					estimated_mem  +=  sum_b*in_feat*18*4/1024/1024/1024
+				if idx ==1: # the output layer
+					estimated_mem  +=  sum_b*hidden_size*18*4/1024/1024/1024	
+		estimated_mem_list.append(estimated_mem)
+
+	modified_estimated_mem_list = []
+	for deg in range(len(redundant_ratio)):
+		modified_estimated_mem_list.append(estimated_mem_list[deg]*redundant_ratio[deg]) 
+		# redundant_ratio[i] is a variable depends on graph characteristic
+		print(' MM estimated memory/GB degree '+str(deg)+': '+str(estimated_mem_list[deg]) + " * " +str(redundant_ratio[deg]) ) 
+	
+
+	return modified_estimated_mem_list, estimated_mem_list
 
 
 #### Entry point
@@ -167,8 +203,6 @@ def run(args, device, data):
 
 	loss_fcn = nn.CrossEntropyLoss()
 
-	# if args.GPUmem:
-	# 	see_memory_usage("----------------------------------------after model to device")
 	logger = Logger(args.num_runs, args)
 	for run in range(args.num_runs):
 		model.reset_parameters()
@@ -187,40 +221,50 @@ def run(args, device, data):
 					full_batch_dataloader.append(item)
 			
 			if args.num_batch > 1:
+				time0 = time.time()
 				b_block_dataloader, weights_list, time_collection = generate_dataloader_bucket_block(g, full_batch_dataloader, args)
 				
-				see_memory_usage("----------------------------------------after generate_dataloader_bucket_block ")
+				time1 = time.time()
+				data_dict = []
+				print('redundancy ratio #input/#seeds/degree')
+				redundant_ratio = []
 				for step, (input_nodes, seeds, blocks) in enumerate(b_block_dataloader):
-					# if step == 19: break # we check the 1-24 bucket batch train memory consumption
-					print("batch " + str(step))
-					print('src global ', len(input_nodes))
-					print('seeds global ', len(seeds))
-					batch_inputs, batch_labels = load_block_subtensor(nfeats, labels, blocks, device,args)#------------*
-					see_memory_usage("----------------------------------------after load_block_subtensor")
+					print(len(input_nodes)/len(seeds)/(step+1))
+					redundant_ratio.append(len(input_nodes)/len(seeds)/(step+1))
+					
+				for step, (input_nodes, seeds, blocks) in enumerate(b_block_dataloader):
+					layer = 0
+					dict_list =[]
+					for b in blocks:
+						print('layer ', layer)
+						graph_in = dict(Counter(b.in_degrees().tolist()))
+						graph_in = dict(sorted(graph_in.items()))
 
-					blocks = [block.int().to(device) for block in blocks]#------------*
-					see_memory_usage("----------------------------------------after blocks to device")
+						print(graph_in)
+						dict_list.append(graph_in)
 
-					# Compute loss and prediction
-					batch_pred = model(blocks, batch_inputs)#------------*
-					see_memory_usage("----------------------------------------after model forward")
+						layer = layer +1
+					print()
+					data_dict.append(dict_list)
+				print('data_dict')
+				print(data_dict)
+				
+				modified_res, res = estimate_mem(data_dict, 100, args.num_hidden, redundant_ratio)
+				fanout_list = [int(fanout) for fanout in args.fan_out.split(',')]
+				fanout = fanout_list[1]
+				print('modified_mem [1-fanout-1]: ', modified_res[:fanout-1])
+				print()
+				print('mem fanout: ', res[fanout-1])
+				print('the modified memory estimation spend (sec)', time.time()-time1)
+				print('the time of number of fanout blocks generation (sec)', time1-time0)
+				
+				
+				
+				
+					
+					
 
-					pseudo_mini_loss = loss_fcn(batch_pred, batch_labels)#------------*
-					see_memory_usage("----------------------------------------after loss_fcn calculation")
 
-					pseudo_mini_loss = pseudo_mini_loss*weights_list[step]#------------*
-					pseudo_mini_loss.backward()#------------*
-					see_memory_usage("----------------------------------------after loss backward")
-
-					see_memory_usage("---------------------------------------- batch " + str(step))
-					loss_sum += pseudo_mini_loss#------------*
-
-				optimizer.step()
-				optimizer.zero_grad()
-				see_memory_usage("----------------------------------------after optimizer")
-
-				print('----------------------------------------------------------pseudo_mini_loss sum ' + str(loss_sum.tolist()))
-				see_memory_usage("---------------------------------------- batch " + str(step)+ ' after optimizer')
 
 			elif args.num_batch == 1:
 				# print('orignal labels: ', labels)
@@ -230,11 +274,7 @@ def run(args, device, data):
 					print('full batch dst global ', len(seeds))
 					# print('full batch eid global ', blocks[-1].edata['_ID'])
 					batch_inputs, batch_labels = load_block_subtensor(nfeats, labels, blocks, device,args)#------------*
-					# print('batch_labels ')
-					# print(batch_labels)
-					# print('blocks')
-					# print(blocks[0].edata['_ID'])
-					# print(blocks[-1].edata['_ID'])
+
 					see_memory_usage("----------------------------------------after load_block_subtensor")
 					blocks = [block.int().to(device) for block in blocks]
 					see_memory_usage("----------------------------------------after block to device")
@@ -276,14 +316,13 @@ def main():
 	# argparser.add_argument('--aggre', type=str, default='mean')
 	argparser.add_argument('--aggre', type=str, default='lstm')
 
-	argparser.add_argument('--selection-method', type=str, default='50_group_bucketing')
-	# argparser.add_argument('--selection-method', type=str, default='50__bucketing')
 	# argparser.add_argument('--selection-method', type=str, default='range_bucketing')
 	# argparser.add_argument('--selection-method', type=str, default='random_bucketing')
-	# argparser.add_argument('--selection-method', type=str, default='fanout_bucketing')
-	argparser.add_argument('--num-batch', type=int, default=28)
+	argparser.add_argument('--selection-method', type=str, default='fanout_bucketing')
 	# argparser.add_argument('--selection-method', type=str, default='custom_bucketing')
-	# argparser.add_argument('--num-batch', type=int, default=20)
+	# argparser.add_argument('--selection-method', type=str, default='__bucketing')
+	argparser.add_argument('--num-batch', type=int, default=50)
+	# argparser.add_argument('--num-batch', type=int, default=100)
 
 	argparser.add_argument('--num-runs', type=int, default=1)
 	argparser.add_argument('--num-epochs', type=int, default=1)
@@ -296,6 +335,8 @@ def main():
 
 	argparser.add_argument('--num-layers', type=int, default=2)
 	argparser.add_argument('--fan-out', type=str, default='10,50')
+	# argparser.add_argument('--fan-out', type=str, default='10,100')
+	# argparser.add_argument('--fan-out', type=str, default='10,25')
 	# argparser.add_argument('--num-layers', type=int, default=3)
 	# argparser.add_argument('--fan-out', type=str, default='10,25,30')
 
